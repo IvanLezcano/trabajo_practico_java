@@ -1,6 +1,6 @@
 package tierra_media;
 
-public enum Categorias {
+public enum Categoria {
 	
 	AVENTURA,
 	PAISAJE,

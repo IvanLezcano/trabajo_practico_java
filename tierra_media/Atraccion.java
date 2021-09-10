@@ -1,16 +1,15 @@
 package tierra_media;
 
 
-public class Atracciones {
+public class Atraccion {
 	private String nombre; 
 	private double valorDeLaAtraccion;
 	private double duracionDeLaAtraccion;
 	private double cupoLimite;
-	private Categorias categoria;
+	private Categoria categoria;
 	
-	public Atracciones(String nombre, double valorDeLaAtraccion, double duracionDeLaAtraccion, double cupoLimite,
-			Categorias categoria) {
-		super();
+	public Atraccion(String nombre, double valorDeLaAtraccion, double duracionDeLaAtraccion, double cupoLimite,
+			Categoria categoria) {
 		this.nombre = nombre;
 		this.valorDeLaAtraccion = valorDeLaAtraccion;
 		this.duracionDeLaAtraccion = duracionDeLaAtraccion;
@@ -50,11 +49,11 @@ public class Atracciones {
 		this.cupoLimite = cupoLimite;
 	}
 
-	public Categorias getCategoria() {
+	public Categoria getCategoria() {
 		return categoria;
 	}
 
-	public void setCategoria(Categorias categoria) {
+	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
 	

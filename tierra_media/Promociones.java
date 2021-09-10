@@ -1,11 +1,15 @@
 package tierra_media;
+import java.util.List;
 
 
-public class Promociones {
+
+public abstract class Promociones {
 	private double costo;
 	private double tiempo;
 	private double cupo;
-	private Categorias categoria;
+	public List<Atraccion> atracciones;
+	private Categoria categoria;
+	
 	public double getCosto() {
 		return costo;
 	}
@@ -24,12 +28,13 @@ public class Promociones {
 	public void setCupo(double cupo) {
 		this.cupo = cupo;
 	}
-	public Categorias getCategoria() {
+	public Categoria getCategoria() {
 		return categoria;
 	}
-	public void setCategoria(Categorias categoria) {
+	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
+	public abstract void pagarPromocion(Usuario usuario);
 	
 	
 /*	Promocionesporcentuales pack aventura = new Promocionesporcentuales(atraccion1, atraccion2,porcentaje)

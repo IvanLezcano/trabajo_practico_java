@@ -1,5 +1,6 @@
 package tierra_media;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Usuario {
@@ -7,16 +8,17 @@ public class Usuario {
 	private String nombre;
 	private double monedasDisponibles;
 	private double tiempoDisponible;
-	private String tipoDeAtraccionFavorita;
-	private List <Atracciones> SugerenciasAceptadas;
+	private Categoria categoriaFavorita;
+	private List <Atraccion> sugerenciasAceptadas;
 	
 	
-	public Usuario(String nombre, double monedasDisponibles, double tiempoDisponible, String tipoDeAtraccionFavorita) {
+	public Usuario(String nombre, double monedasDisponibles, double tiempoDisponible, Categoria categoriaFavorita) {
 		super();
 		this.nombre = nombre;
 		this.monedasDisponibles = monedasDisponibles;
 		this.tiempoDisponible = tiempoDisponible;
-		this.tipoDeAtraccionFavorita = tipoDeAtraccionFavorita;
+		this.categoriaFavorita = categoriaFavorita;
+		sugerenciasAceptadas= new ArrayList();
 	}
 
 
@@ -50,23 +52,35 @@ public class Usuario {
 	}
 
 
-	public String getTipoDeAtraccionFavorita() {
-		return tipoDeAtraccionFavorita;
+	public Categoria getTipoDeAtraccionFavorita() {
+		return categoriaFavorita;
 	}
 
 
-	public void setTipoDeAtraccionFavorita(String tipoDeAtraccionFavorita) {
-		this.tipoDeAtraccionFavorita = tipoDeAtraccionFavorita;
+	public void setTipoDeAtraccionFavorita(Categoria categoriaFavorita) {
+		this.categoriaFavorita = categoriaFavorita;
 	}
 
 
-	public List<Atracciones> getSugerenciasAceptadas() {
-		return SugerenciasAceptadas;
+	public List<Atraccion> getSugerenciasAceptadas() {
+		return sugerenciasAceptadas;
 	}
+	
+	
+	
+	public void pagar(double monto) {
+		
+		this.setMonedasDisponibles(Math.max(this.getMonedasDisponibles()-monto,0));
+		
+	};
 
-
-	public void setSugerenciasAceptadas(List<Atracciones> sugerenciasAceptadas) {
-		SugerenciasAceptadas = sugerenciasAceptadas;
+	public void setSugerenciasAceptadas(List<Atraccion> sugerencias) {
+		for (Atraccion atraccion : sugerencias) {
+			sugerenciasAceptadas.add(atraccion);
+		};
+		
+		
+		
 	}
 	
 	
