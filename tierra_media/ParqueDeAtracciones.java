@@ -9,12 +9,12 @@ public class ParqueDeAtracciones {
 		
 		System.out.println(carlitos.getNombre() + " tiene "+ carlitos.getTiempoDisponible()+ " horas disponibles");
 		Atraccion mordor = new Atraccion("mordor", 20, 20, 20, Categoria.AVENTURA);
-		Atraccion peron = new Atraccion("peron", 20, 20, 20, Categoria.AVENTURA);
+		Atraccion subeybaja = new Atraccion("subeybaja", 20, 20, 20, Categoria.AVENTURA);
 		Atraccion calecita = new Atraccion("calecita", 40, 40, 40, Categoria.AVENTURA);
 		Atraccion montaña = new Atraccion("montaña", 30, 30, 30, Categoria.AVENTURA);
-		Atraccion menem = new Atraccion("menem", 20, 20, 20, Categoria.AVENTURA);
+		Atraccion tusam = new Atraccion("tusam", 20, 20, 20, Categoria.AVENTURA);
 		
-		PromocionDePrecioFijo pacpolitico = new PromocionDePrecioFijo(20,new ArrayList<Atraccion>(){{ add(peron); add(mordor); add(menem); }});
+		PromocionDePrecioFijo pacpolitico = new PromocionDePrecioFijo(20,new ArrayList<Atraccion>(){{ add(subeybaja); add(mordor); add(tusam); }});
 		System.out.println(pacpolitico);
 		System.out.println(carlitos.getMonedasDisponibles());
 		pacpolitico.pagarPromocion(carlitos);
@@ -23,6 +23,13 @@ public class ParqueDeAtracciones {
 		PromocionDePrecioReducidoPorcentualmente pacreal = new PromocionDePrecioReducidoPorcentualmente(20,new ArrayList<Atraccion>(){{add(montaña); add(calecita); }});
 		pacreal.pagarPromocion(carlitos);
 		System.out.println(carlitos.getMonedasDisponibles());
+		System.out.println(carlitos.getSugerenciasAceptadas());
+		PromocionDeTresProductosAlCostoDeDos pacx2 = new PromocionDeTresProductosAlCostoDeDos(mordor,tusam,calecita);
+		pacx2.pagarPromocion(carlitos);
+		System.out.println(carlitos.getMonedasDisponibles());
+		System.out.println(carlitos.getSugerenciasAceptadas());
+
+
 
 
 

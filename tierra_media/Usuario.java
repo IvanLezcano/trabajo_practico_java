@@ -75,6 +75,7 @@ public class Usuario {
 	};
 
 	public void setSugerenciasAceptadas(List<Atraccion> sugerencias) {
+		
 		for (Atraccion atraccion : sugerencias) {
 			sugerenciasAceptadas.add(atraccion);
 		};
