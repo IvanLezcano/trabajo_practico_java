@@ -1,5 +1,11 @@
 package tierra_media;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,6 +78,7 @@ public class Usuario {
 		
 		this.setMonedasDisponibles(Math.max(this.getMonedasDisponibles()-monto,0));
 		
+		
 	};
 
 	public void setSugerenciasAceptadas(List<Atraccion> sugerencias) {
@@ -85,8 +92,42 @@ public class Usuario {
 	}
 	
 	
-	
+	 public String leerTxt(String direccion){ //direccion del archivo
+	        
+	        String texto = "";
+	        
+	        try{
+	            BufferedReader bf = new BufferedReader(new FileReader(direccion));
+	            String temp = "";
+	            String bfRead;
+	            while((bfRead = bf.readLine()) != null){ 
+	                System.out.println("esta es la linea");
 
-	
+	                temp = temp + '\n' + bfRead; 
+	            }
+	            
+	            texto = temp;
+	            
+	            
+	        }catch(Exception e){ 
+	            System.err.println("No se encontro archivo");
+	        }
+	        
+	        return texto;
+	        
+	    }
+	 public void agendar(){
+	 try(FileWriter fw = new FileWriter("src/archivos/"+this.getNombre()+".txt", true);
+			    BufferedWriter bw = new BufferedWriter(fw);
+			
+			    PrintWriter out = new PrintWriter(bw))
+			    {
+			        out.println(this.getNombre()+" "+ this.getMonedasDisponibles()+" "+this.getTiempoDisponible());
+			        //more code
+			   
+			} catch (IOException e) {
+			    //exception handling left as an exercise for the reader
+			}}
+    
 	
 }

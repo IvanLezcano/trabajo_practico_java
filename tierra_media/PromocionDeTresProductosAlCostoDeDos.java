@@ -26,6 +26,11 @@ import java.util.List;
 		    double montoAPagar = this.atraccion1.getValorDeLaAtraccion()+this.atraccion2.getValorDeLaAtraccion();
 			usuario.pagar(montoAPagar);
 			
+				this.atraccion1.setCupoLimite(atraccion1.getCupoLimite()-1);
+				this.atraccion2.setCupoLimite(atraccion2.getCupoLimite()-1);
+				this.atraccionGratuita.setCupoLimite(atraccionGratuita.getCupoLimite()-1);
+
+			
 			 
 			usuario.setSugerenciasAceptadas(new ArrayList<Atraccion>(){{ add(atraccion1); add(atraccion2); add(atraccionGratuita); }});
 		};

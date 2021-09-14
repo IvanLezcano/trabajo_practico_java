@@ -4,16 +4,16 @@ import java.util.List;
 
 
 public abstract class Promociones {
-	private double costo;
+	private int costo;
 	private double tiempo;
-	private double cupo;
+	private int cupo;
 	public List<Atraccion> atracciones;
 	private Categoria categoria;
 	
-	public double getCosto() {
+	public int getCosto() {
 		return costo;
 	}
-	public void setCosto(double costo) {
+	public void setCosto(int costo) {
 		this.costo = costo;
 	}
 	public double getTiempo() {
@@ -22,10 +22,10 @@ public abstract class Promociones {
 	public void setTiempo(double tiempo) {
 		this.tiempo = tiempo;
 	}
-	public double getCupo() {
+	public int getCupo() {
 		return cupo;
 	}
-	public void setCupo(double cupo) {
+	public void setCupo(int cupo) {
 		this.cupo = cupo;
 	}
 	public Categoria getCategoria() {

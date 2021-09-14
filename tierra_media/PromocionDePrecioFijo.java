@@ -1,5 +1,6 @@
 package tierra_media;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class PromocionDePrecioFijo extends Promociones{
@@ -17,5 +18,9 @@ public class PromocionDePrecioFijo extends Promociones{
 	public void pagarPromocion(Usuario usuario){
 		usuario.pagar(this.precioFijo);
 		usuario.setSugerenciasAceptadas(this.atracciones);
+		for (Atraccion atraccion : atracciones) {
+			atraccion.setCupoLimite(atraccion.getCupoLimite()-1);
+		}
+		/*atracciones.stream().mapToDouble(atraccion -> atraccion.setCupoLimite(atraccion.getCupoLimite()-1));*/
 	};
 }

@@ -19,7 +19,9 @@ public class PromocionDePrecioReducidoPorcentualmente extends Promociones {
 	    .mapToDouble(atraccion -> atraccion.getValorDeLaAtraccion()).sum();
 	    montoAPagar = montoAPagar-(montoAPagar * porcentaje);
 		usuario.pagar(montoAPagar);
-		
+		for (Atraccion atraccion : atracciones) {
+			atraccion.setCupoLimite(atraccion.getCupoLimite()-1);
+		}
 		
 		usuario.setSugerenciasAceptadas(this.atracciones);
 	};
